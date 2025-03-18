@@ -26,7 +26,8 @@ puntaje = 0
  # Índice de la respuesta correcta para cada pregunta, el el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
 # Hago una lista con todos los datos de questions,answers y el index de correct answers
-questions_to_ask = random.choices(list(zip(questions,answers,correct_answers_index)), k=3)
+# Modifico la linea siguiente para que no se repitan las preguntas cambiando el random.choices() por random.sample()
+questions_to_ask = random.sample(list(zip(questions,answers,correct_answers_index)), k=3)
 # El usuario deberá contestar 3 preguntas
 for question,answer,correct_answer in questions_to_ask:
  # Se selecciona una pregunta aleatoria
