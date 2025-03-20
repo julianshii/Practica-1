@@ -29,11 +29,11 @@ correct_answers_index = [1, 2, 0, 3, 1]
 # Modifico la linea siguiente para que no se repitan las preguntas cambiando el random.choices() por random.sample()
 questions_to_ask = random.sample(list(zip(questions,answers,correct_answers_index)), k=3)
 # El usuario deberá contestar 3 preguntas
-for question,answer,correct_answer in questions_to_ask:
+for question,posible_answers,correct_answer in questions_to_ask:
  # Se selecciona una pregunta aleatoria
  # Se muestra la pregunta y las respuestas posibles
     print(question)
-    for i, answer in enumerate(answer):
+    for i, answer in enumerate(posible_answers):
         print(f"{i + 1}. {answer}")
  # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
@@ -58,7 +58,7 @@ for question,answer,correct_answer in questions_to_ask:
  # se muestra la respuesta correcta
             print("Incorrecto. La respuesta correcta es:")
             puntaje -= 0.50
-            print (answer)
+            print (posible_answers[correct_answer])
  # Se imprime un blanco al final de la pregunta
     print()
  # imprimo el puntaje obtenido 
